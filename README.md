@@ -85,6 +85,7 @@ When running `agyless init`, the following files in `~/.gemini` are configured:
 
 ---
 
-## 📄 License
+## 📄 License & Acknowledgements
 
-MIT
+- **Upstream Reference**: This project is inspired by and refactored from [tokless](https://github.com/HoangP8/tokless) by [HoangP8](https://github.com/HoangP8). We thank the original author for the token-saving concepts and multi-agent groundwork.
+- **License**: MIT
