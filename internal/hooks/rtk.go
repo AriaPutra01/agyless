@@ -9,7 +9,7 @@ import (
 	"os/exec"
 	"strings"
 
-	"tokless/internal/config"
+	"github.com/AriaPutra01/agyless/internal/config"
 )
 
 type toolCallRequest struct {

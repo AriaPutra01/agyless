@@ -13,7 +13,7 @@ var geminiRulesTemplate string
 
 // InstallConfig writes hooks.json, mcp_config.json, settings.json, and GEMINI.md.
 func InstallConfig() error {
-	toklessPath := ToklessBin()
+	agylessPath := AgylessBin()
 	codegraphPath := FindBinary("codegraph")
 	if codegraphPath == "" {
 		codegraphPath = "codegraph"
@@ -51,21 +51,21 @@ func InstallConfig() error {
 					"hooks": []interface{}{
 						map[string]interface{}{
 							"type":    "command",
-							"command": fmt.Sprintf("%s rtk-hook agy", toklessPath),
+							"command": fmt.Sprintf("%s rtk-hook agy", agylessPath),
 							"timeout": 10,
 						},
 					},
 				},
 			},
 		},
-		"tokless-codegraph-index": map[string]interface{}{
+		"agyless-codegraph-index": map[string]interface{}{
 			"PostToolUse": []interface{}{
 				map[string]interface{}{
 					"matcher": "",
 					"hooks": []interface{}{
 						map[string]interface{}{
 							"type":    "command",
-							"command": fmt.Sprintf("%s agy-hook codegraph-index", toklessPath),
+							"command": fmt.Sprintf("%s agy-hook codegraph-index", agylessPath),
 							"timeout": 120,
 						},
 					},
@@ -74,7 +74,7 @@ func InstallConfig() error {
 			"PreInvocation": []interface{}{
 				map[string]interface{}{
 					"type":    "command",
-					"command": fmt.Sprintf("%s agy-hook codegraph-index", toklessPath),
+					"command": fmt.Sprintf("%s agy-hook codegraph-index", agylessPath),
 					"timeout": 120,
 				},
 			},
@@ -94,7 +94,7 @@ func InstallConfig() error {
 				"trust":   true,
 			},
 			"context-mode": map[string]interface{}{
-				"command": toklessPath,
+				"command": agylessPath,
 				"args": []string{
 					"run-mcp",
 					"--context-mode",

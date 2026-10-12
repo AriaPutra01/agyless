@@ -9,7 +9,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"tokless/internal/config"
+	"github.com/AriaPutra01/agyless/internal/config"
 )
 
 type workspaceInput struct {
@@ -29,7 +29,7 @@ func RunCodegraphIndexHook() int {
 	return ensureCodegraphIndex(dir)
 }
 
-// RunManualIndex handles 'tokless index [dir]'.
+// RunManualIndex handles 'agyless index [dir]'.
 func RunManualIndex(dir string) int {
 	if dir == "" {
 		var err error

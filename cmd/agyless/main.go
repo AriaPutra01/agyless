@@ -4,26 +4,26 @@ import (
 	"fmt"
 	"os"
 
-	"tokless/internal/config"
-	"tokless/internal/hooks"
-	"tokless/internal/mcp"
+	"github.com/AriaPutra01/agyless/internal/config"
+	"github.com/AriaPutra01/agyless/internal/hooks"
+	"github.com/AriaPutra01/agyless/internal/mcp"
 )
 
-const version = "1.0.0-agy"
+const version = "1.0.0"
 
 func helpText() string {
-	return `tokless (Antigravity Edition) — Token saver & MCP/Hook orchestrator
+	return `agyless — Token saver & MCP/Hook orchestrator for Google Antigravity
 
 Usage:
-  tokless               Install and wire Antigravity hooks, MCP servers, and rules
-  tokless init          Install and wire Antigravity hooks, MCP servers, and rules
-  tokless index [dir]   Initialize/build CodeGraph AST index (.codegraph/) in directory
-  tokless version       Show version
+  agyless               Install and wire Antigravity hooks, MCP servers, and rules
+  agyless init          Install and wire Antigravity hooks, MCP servers, and rules
+  agyless index [dir]   Initialize/build CodeGraph AST index (.codegraph/) in directory
+  agyless version       Show version
 
 Internal Agent Hooks:
-  tokless rtk-hook agy              PreToolUse hook for Antigravity run_command
-  tokless agy-hook codegraph-index  PreInvocation/PostToolUse hook for CodeGraph auto-init
-  tokless run-mcp --context-mode    Bounded MCP JSON-RPC proxy for context-mode
+  agyless rtk-hook agy              PreToolUse hook for Antigravity run_command
+  agyless agy-hook codegraph-index  PreInvocation/PostToolUse hook for CodeGraph auto-init
+  agyless run-mcp --context-mode    Bounded MCP JSON-RPC proxy for context-mode
 `
 }
 
@@ -63,7 +63,7 @@ func main() {
 		}
 		os.Exit(hooks.RunManualIndex(target))
 	case "version", "-v", "--version":
-		fmt.Println("tokless (Antigravity)", version)
+		fmt.Println("agyless", version)
 	case "help", "-h", "--help":
 		fmt.Println(helpText())
 	default:
@@ -74,7 +74,7 @@ func main() {
 }
 
 func runInit() {
-	fmt.Println("=== tokless (Antigravity Edition) Setup ===")
+	fmt.Println("=== agyless (Antigravity Toolkit) Setup ===")
 	if err := config.EnsureDeps(); err != nil {
 		fmt.Printf("Error checking dependencies: %v\n", err)
 	}

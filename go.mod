@@ -1,3 +1,3 @@
-module tokless
+module github.com/AriaPutra01/agyless
 
-go 1.22
+go 1.25.5

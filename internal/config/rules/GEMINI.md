@@ -127,7 +127,7 @@ Prebuilt code index. `codegraph_explore` gives source, call path, and blast radi
 │  └─ Configs/docs/.env/non-indexed → Use normal tools.
 └─ NO  → `git ls-files | wc -l`.
    ├─ ≤5 files or no git → Use normal tools.
-   └─ Otherwise → Run `tokless index` once.
+   └─ Otherwise → Run `agyless index` once.
       ├─ Ready → Use CodeGraph.
       └─ Fails/CLI missing → Use normal tools; do not retry.
 ```

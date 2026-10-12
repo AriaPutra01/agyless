@@ -39,18 +39,18 @@ func FindBinary(name string) string {
 	return ""
 }
 
-// ToklessBin returns current tokless executable path or ~/.local/bin/tokless.
-func ToklessBin() string {
+// AgylessBin returns current agyless executable path or ~/.local/bin/agyless.
+func AgylessBin() string {
 	if exe, err := os.Executable(); err == nil && filepath.Base(exe) != "main" {
 		if resolved, err := filepath.EvalSymlinks(exe); err == nil {
 			return resolved
 		}
 		return exe
 	}
-	if p := FindBinary("tokless"); p != "" {
+	if p := FindBinary("agyless"); p != "" {
 		return p
 	}
-	return filepath.Join(Home(), ".local", "bin", "tokless")
+	return filepath.Join(Home(), ".local", "bin", "agyless")
 }
 
 // EnsureDeps checks and installs rtk, context-mode, and codegraph if missing.
